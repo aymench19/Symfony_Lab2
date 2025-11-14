@@ -16,9 +16,9 @@ class EtudiantController extends AbstractController
 
         // Tableau associatif
         $modules = [
-            ["id" => 1 ,"enseignant" => "Ali" ,"nbr_heures" => 30 , "date_creation" => "2023-01-15" ],
-            ["id" => 2 ,"enseignant" => "Sarra" ,"nbr_heures" => 25 , "date_creation" => "2023-01-16" ],
-            ["id" => 3 ,"enseignant" => "Ahmed" ,"nbr_heures" => 20 , "date_creation" => "2023-01-17" ],
+            ["id" => 1 ,"module"=>"Symfony","enseignant" => "Ali" ,"nbr_heures" => 30 , "date_creation" => "2023-01-15" ],
+            ["id" => 2 ,"module"=>"JEE","enseignant" => "Sarra" ,"nbr_heures" => 25 , "date_creation" => "2023-01-16" ],
+            ["id" => 3 ,"module"=>"BD","enseignant" => "Ahmed" ,"nbr_heures" => 20 , "date_creation" => "2023-01-17" ],
         ];
 
 return $this->render('etudiant/list.html.twig', [
@@ -39,9 +39,9 @@ return $this->render('etudiant/list.html.twig', [
     {
 $etudiants = ['Ali', 'Sarra', 'Ahmed'];
     $modules = [
-        ["id" => 1 ,"enseignant" => "Ali" ,"nbr_heures" => 30 , "date_creation" => "2023-01-15" ],
-        ["id" => 2 ,"enseignant" => "Sarra" ,"nbr_heures" => 25 , "date_creation" => "2023-01-16" ],
-        ["id" => 3 ,"enseignant" => "Ahmed" ,"nbr_heures" => 20 , "date_creation" => "2023-01-17" ],
+            ["id" => 1 ,"module"=>"Symfony","enseignant" => "Ali" ,"nbr_heures" => 30 , "date_creation" => "2023-01-15" ],
+            ["id" => 2 ,"module"=>"JEE","enseignant" => "Sarra" ,"nbr_heures" => 25 , "date_creation" => "2023-01-16" ],
+            ["id" => 3 ,"module"=>"BD","enseignant" => "Ahmed" ,"nbr_heures" => 20 , "date_creation" => "2023-01-17" ],
     ];
 
     return $this->render('etudiant/index.html.twig', [

@@ -22,12 +22,14 @@
                 <th>Enseignant</th>
                 <th>Nbre Heures</th>
                 <th>Date Création</th>
+                <th>Affectation</th>
             </tr>
         </thead>
         <tbody>
             {% for m in modules %}
                 <tr>
                     <td>{{ m.id }}</td>
+                    <td>{{m.module}}</td>
                     <td>{{ m.enseignant }}</td>
                     <td>{{ m.nbr_heures }}</td>
                     <td>{{ m.date_creation | date('d/m/Y') }}</td>
