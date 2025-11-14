@@ -1,30 +1,41 @@
-<ul>
-  {% for etudiant in etudiants %}
-     <li>
-      {{etudiant | upper}}
-     </li>
-         {% else %}
-           <strong> la liste des etudiants est vide </strong>
-  {% endfor%}
-  
-  <h1>Liste des modules<h1>
-  <table border="1">
-    <tr>
-      <td>idModule</td>
-      <td>Nom</td>
-      <td>Enseignant</td>
-      <td>Nombre Heures</td>
-      <td>Date</td>
-    </tr>
 
-    {% for m in listeModules %}
-        <tr>
-          <td>{{ m.id }}</td>
-          <td>{{ m.nom }}</td>
-          <td>{{ m.enseignant }}</td>
-          <td>{{ m.nbrHeures }}</td>
-          <td>{{ m.date }}</td>
-        </tr>
-    {% endfor %}
-  </table>
-</ul>
+<h2>Liste des Étudiants</h2>
+
+
+    <ul>
+       {% for e in etudiants %}
+    <li>{{ e | upper }}</li>
+{% endfor %}
+
+    </ul>
+
+<hr>
+
+<h3>Liste des Modules</h3>
+
+{% if modules is not empty %}
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>idModule</th>
+                <th>Nom</th>
+                <th>Enseignant</th>
+                <th>Nbre Heures</th>
+                <th>Date Création</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in modules %}
+                <tr>
+                    <td>{{ m.id }}</td>
+                    <td>{{ m.enseignant }}</td>
+                    <td>{{ m.nbr_heures }}</td>
+                    <td>{{ m.date_creation | date('d/m/Y') }}</td>
+                    <td><a href="{{ path('affecter_etudiant', {'id': m.id}) }}">Affecter</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Aucun module trouvé.</p>
+{% endif %}

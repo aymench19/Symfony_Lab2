@@ -1,0 +1,30 @@
+{# templates/layout.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon Application Symfony{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Application Étudiants - Atelier 3</h1>
+        <nav>
+            <a href="{{ path('index_fils') }}">Accueil</a> |
+            <a href="{{ path('list_etudiant') }}">Liste Étudiants</a> |
+            <a href="{{ path('affecter_etudiant') }}">Affectation</a>
+        </nav>
+        <hr>
+    </header>
+
+    <section>
+        {% block body %}
+        test
+        {% endblock %}
+    </section>
+
+    <footer>
+        <hr>
+        <p>© 2025 - Atelier Symfony 6 - Twig</p>
+    </footer>
+</body>
+</html>
