@@ -26,5 +26,18 @@ class EtudiantController extends AbstractController
         'name' => $name,
     ]);
    }
+   #[Route('/list', name: 'liste')]
+    public function listEtudiant()
+   {
+    $etudiants=array("aymen","ali");
+    
+    $modules= array(
+        array("nom"=>"symfony","id"=>1,"enseignant"=>"mohamed","nbre_heures"=>42,"date"=>"12-12-2021"),
+        array("nom"=>"JEE","id"=>2,"enseignant"=>"salah","nbre_heures"=>31,"date"=>"12-10-2021"),
+        array("nom"=>"BD","id"=>3,"enseignant"=>"Islem","nbre_heures"=>21,"date"=>"12-09-2021"),);
+
+    return $this->render('etudiant/list.html.twig',
+        array ('etudiants' => $etudiants, 'listemodules' => $modules));
+   }
 
 }
